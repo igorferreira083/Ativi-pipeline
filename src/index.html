@@ -2,18 +2,61 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Testando Funções</title>
+  <title>Testando Funções - Igor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      color: #007acc;
+    }
+
+    .resultado {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+
+    .resultado p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
-  <h1>Teste de soma e multiplicação - Igor</h1>
+  <h1>Teste de Soma e Multiplicação - Igor</h1>
+
+  <div class="resultado" id="resultado">
+    <p>Calculando...</p>
+  </div>
+
   <script type="module">
     import { soma, multiplicacao } from './src/index.js';
 
-    console.log("Soma(3, 4):", soma(3, 4));
-    console.log("Multiplicação(3, 4):", multiplicacao(3, 4));
+    const resultado = document.getElementById('resultado');
 
-    document.body.innerHTML += `<p>Soma(3, 4): ${soma(3, 4)}</p>`;
-    document.body.innerHTML += `<p>Multiplicação(3, 4): ${multiplicacao(3, 4)}</p>`;
+    const a = 3;
+    const b = 4;
+
+    const resultadoSoma = soma(a, b);
+    const resultadoMultiplicacao = multiplicacao(a, b);
+
+    console.log(`Soma(${a}, ${b}):`, resultadoSoma);
+    console.log(`Multiplicação(${a}, ${b}):`, resultadoMultiplicacao);
+
+    resultado.innerHTML = `
+      <p><strong>Soma(${a}, ${b}):</strong> ${resultadoSoma}</p>
+      <p><strong>Multiplicação(${a}, ${b}):</strong> ${resultadoMultiplicacao}</p>
+    `;
   </script>
 </body>
 </html>
+[]
