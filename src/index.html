@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Testando Funções</title>
+</head>
+<body>
+  <h1>Teste de soma e multiplicação</h1>
+  <script type="module">
+    import { soma, multiplicacao } from './src/index.js';
+
+    console.log("Soma(3, 4):", soma(3, 4));
+    console.log("Multiplicação(3, 4):", multiplicacao(3, 4));
+
+    document.body.innerHTML += `<p>Soma(3, 4): ${soma(3, 4)}</p>`;
+    document.body.innerHTML += `<p>Multiplicação(3, 4): ${multiplicacao(3, 4)}</p>`;
+  </script>
+</body>
+</html>
