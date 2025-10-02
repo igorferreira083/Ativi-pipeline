@@ -38,18 +38,17 @@
     <p>Calculando...</p>
   </div>
 
-  <script type="module">
-    import { soma, multiplicacao } from './src/index.js';
-
-    const resultado = document.getElementById('resultado');
-
+  <!-- Agora usamos src/index.js direto no navegador -->
+  <script src="./src/index.js"></script>
+  <script>
     const a = 3;
     const b = 4;
 
+    // usa as funções que foram expostas no window
     const resultadoSoma = soma(a, b);
     const resultadoMultiplicacao = multiplicacao(a, b);
 
-    resultado.innerHTML = `
+    document.getElementById('resultado').innerHTML = `
       <p><strong>Soma(${a}, ${b}):</strong> ${resultadoSoma}</p>
       <p><strong>Multiplicação(${a}, ${b}):</strong> ${resultadoMultiplicacao}</p>
     `;

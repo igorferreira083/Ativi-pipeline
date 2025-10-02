@@ -1,8 +1,16 @@
-//// src/index.js
-export function soma(a, b) {
+function soma(a, b) {
   return a + b;
 }
 
-export function multiplicacao(a, b) {
+function multiplicacao(a, b) {
   return a * b;
 }
+
+// expõe no navegador
+if (typeof window !== 'undefined') {
+  window.soma = soma;
+  window.multiplicacao = multiplicacao;
+}
+
+// exporta para Jest
+module.exports = { soma, multiplicacao };
